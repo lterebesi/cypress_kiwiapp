@@ -1,5 +1,3 @@
-/// <reference types="cypress"/>
-
 describe("Kiwi App - Search flights scenarios", () => {
   const cookiesAccept        = '.bxaSJY';
   const defaultDepartureCity = '[data-test="PlacePickerInput-origin"]'
@@ -11,7 +9,6 @@ describe("Kiwi App - Search flights scenarios", () => {
   const closeDefaultLocation = '[data-test="PlacePickerInputPlace-close"]';
   const departureLocation    = '[data-test="SearchField-input"]';
   const departureDate        = '[name="search-inboundDate"]';
-  const dateToday            = '.CalendarDaystyled__SuperSmallTemporary-sc-17hkeg7-13';
   const setDatesButton       = 'Set dates';
   const lastDepartureDate    = '[data-test="DayDateTypography"]';
 
@@ -55,7 +52,6 @@ describe("Kiwi App - Search flights scenarios", () => {
       .type("{esc}");
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
     cy.get(departureDate).click();
-    cy.get(dateToday).click();
     cy.get(lastDepartureDate).last().click();
     cy.contains(setDatesButton).click();
   });
@@ -113,7 +109,6 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
 
     cy.get(departureDate).click();
-    cy.get(dateToday).click();
     cy.get(lastDepartureDate).last().click();
     cy.contains(setDatesButton).click();
   });
