@@ -1,0 +1,9 @@
+{
+    "env":
+        {
+            "baseURL": "https://www.kiwi.com", 
+            "newDepartureLocation": "Bucharest",
+            "toDestination": "Berlin",
+            "toDestinationTwo":"Amsterdam"
+        }
+}

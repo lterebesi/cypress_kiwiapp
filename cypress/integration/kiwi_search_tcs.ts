@@ -1,0 +1,120 @@
+/// <reference types="cypress"/>
+
+describe("Kiwi App - Search flights scenarios", () => {
+  const cookiesAccept        = '.bxaSJY';
+  const defaultDepartureCity = '[data-test="PlacePickerInput-origin"]'
+  const bookingCheckbox      = 'input[type=checkbox]';
+  const firstDestination     = '[data-test="PlacePickerInput-destination"]';
+  const secondDestination    = '[data-test="PlacePickerInput-destination"] > :nth-child(2)';
+  const searchButton         = '[data-test="LandingSearchButton"]';
+  const cheapestprice        = 'Cheapest';
+  const closeDefaultLocation = '[data-test="PlacePickerInputPlace-close"]';
+  const departureLocation    = '[data-test="SearchField-input"]';
+  const departureDate        = '[name="search-inboundDate"]';
+  const dateToday            = '.CalendarDaystyled__SuperSmallTemporary-sc-17hkeg7-13';
+  const setDatesButton       = 'Set dates';
+  const lastDepartureDate    = '[data-test="DayDateTypography"]';
+
+  // As all scenarios use the same URL, accept cookies and have a default location set,
+  // they were added within the beforeEach() hook
+  beforeEach(() => {
+    cy.visit(Cypress.env("baseURL"));
+    cy.get(cookiesAccept).click();
+    cy.get(bookingCheckbox).uncheck({ force: true });
+
+    cy.get(defaultDepartureCity).then(($defaultCity) => {
+      const defaultCity = $defaultCity.text();
+      cy.log("The default departure city is: ", defaultCity);
+      cy.get(defaultDepartureCity).should("contain", defaultCity);
+    });
+  });
+
+  // Each scenario performs as ultimate steps a Search button click and validates a text
+  // which is unique on the landing sarch results page - added in the afterEach() hook
+  afterEach(() => {
+    cy.get(searchButton).click();
+    cy.contains(cheapestprice).should("be.visible");
+  });
+
+  it("Search for  a flight - from the default location to single destination, anytime", () => {
+    cy.get(firstDestination).click();
+    cy.get(firstDestination)
+      .first()
+      .type(Cypress.env("toDestination"), { delay: 500 })
+      .type("{enter}", { delay: 500 })
+      .type("{esc}");
+    cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
+  });
+
+  it("Search for  a flight - from the default location to single destination, preferred dates", () => {
+    cy.get(firstDestination).click();
+    cy.get(firstDestination)
+      .first()
+      .type(Cypress.env("toDestination"), { delay: 500 })
+      .type("{enter}", { delay: 500 })
+      .type("{esc}");
+    cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
+    cy.get(departureDate).click();
+    cy.get(dateToday).click();
+    cy.get(lastDepartureDate).last().click();
+    cy.contains(setDatesButton).click();
+  });
+
+  it("Search for a flight - from the default location to multiple destinations, anytime", () => {
+    cy.get(firstDestination).click();
+    cy.get(firstDestination)
+      .first()
+      .type(Cypress.env("toDestination"), { delay: 500 })
+      .type("{enter}", { delay: 500 })
+      .type(Cypress.env("toDestinationTwo"), { delay: 500 });
+    cy.get(secondDestination).type("{enter}", { delay: 500 }).type("{esc}");
+
+    cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
+    cy.get(secondDestination).should(
+      "contain",
+      Cypress.env("toDestinationTwo")
+    );
+  });
+
+  it("Search for a flight - from new location, anytime", () => {
+    cy.get(closeDefaultLocation).click();
+    cy.get(departureLocation)
+      .first()
+      .click()
+      .type(Cypress.env("newDepartureLocation"), { delay: 500 })
+      .type("{enter}", { delay: 500 });
+    cy.get(firstDestination).click();
+    cy.get(firstDestination)
+      .first()
+      .type(Cypress.env("toDestination"), { delay: 500 });
+    cy.get(firstDestination)
+      .first()
+      .type("{enter}", { delay: 500 })
+      .type("{esc}");
+    cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
+  });
+
+  it("Search for a flight - from new location, preferred dates", () => {
+    cy.get(closeDefaultLocation).click();
+    cy.get(departureLocation)
+      .first()
+      .click()
+      .type(Cypress.env("newDepartureLocation"), { delay: 500 })
+      .type("{enter}", { delay: 500 });
+    cy.get(firstDestination).click();
+    cy.get(firstDestination)
+      .first()
+      .type(Cypress.env("toDestination"), { delay: 500 });
+    cy.get(firstDestination)
+      .first()
+      .type("{enter}", { delay: 500 })
+      .type("{esc}");
+
+    cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
+
+    cy.get(departureDate).click();
+    cy.get(dateToday).click();
+    cy.get(lastDepartureDate).last().click();
+    cy.contains(setDatesButton).click();
+  });
+});
