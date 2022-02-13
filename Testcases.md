@@ -70,7 +70,7 @@ The following test cases have been automated for www.kiwi.com app:
 | 2 | Uncheck the "Booking.com" checkbox                  | The checkbox is unchecked                   |
 | 3 | Remove the default departure location selected      | The default departure location is removed   |
 | 4 | Type in the new desired departure location          | The autocomplete returns relevand results   |
-| 5	| Click the first returned result    			            | The result gets selected				            |
+| 5	| Click the first returned result    			      | The result gets selected				    |
 | 6 | Click the Destination autocomplete field            | The autocomplete field gets expanded        |
 | 7 | Type in the desired destination                     | The autocomplete returns relevant results   |
 | 8 | Click the first returned result                     | The result gets selected                    |
