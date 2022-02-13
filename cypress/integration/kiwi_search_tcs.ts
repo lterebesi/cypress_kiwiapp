@@ -33,7 +33,7 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.contains(cheapestprice).should("be.visible");
   });
 
-  it("Search for  a flight - from the default location to single destination, anytime", () => {
+  it("Search for a flight - from the default location to single destination, anytime", () => {
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
@@ -43,7 +43,7 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
   });
 
-  it("Search for  a flight - from the default location to single destination, preferred dates", () => {
+  it("Search for a flight - from the default location to single destination, preferred dates", () => {
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
