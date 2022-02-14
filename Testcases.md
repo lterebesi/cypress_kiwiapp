@@ -39,9 +39,9 @@ The following test cases have been automated for www.kiwi.com website:
 | 2 | Uncheck the "Booking.com" checkbox                  | The checkbox is unchecked                   |
 | 3 | Leave the default Departure field location selected | The defaults remain selected                |
 | 4 | Click the Destination autocomplete field            | The autocomplete field gets expanded        |
-| 5 | Type in the first destination                       | The afferent results get displayed          |
+| 5 | Type in the first destination                       | The corresponding results get displayed     |
 | 6 | Click the first result from the list                | The first destination gets selected         |
-| 7 | Type in the second destination                      | The afferent results get displayed          |
+| 7 | Type in the second destination                      | The corresponding results get displayed     |
 | 8 | Click the second result from the list               | The second destination gets selected        |
 | 9 | Click the "Search" button                           | The search process starts showing results   |
 ---------------------------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ The following test cases have been automated for www.kiwi.com website:
 | 2 | Uncheck the "Booking.com" checkbox                  | The checkbox is unchecked                   |
 | 3 | Remove the default departure location selected      | The default departure location is removed   |
 | 4 | Type in the new desired departure location          | The autocomplete returns relevant results   |
-| 5	| Click the first returned result    			      | The result gets selected                    |
+| 5	| Click the first returned result                     | The result gets selected                    |
 | 6 | Click the Destination autocomplete field            | The autocomplete field gets expanded        |
 | 7 | Type in the desired destination                     | The autocomplete returns relevant results   |
 | 8 | Click the first returned result                     | The result gets selected                    |
