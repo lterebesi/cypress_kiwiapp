@@ -31,6 +31,7 @@ describe("Kiwi App - Search flights scenarios", () => {
   afterEach(() => {
     cy.get(searchButton).click();
     cy.contains(cheapestprice).should("be.visible");
+    cy.clearCookies();
   });
 
   it("Search for a flight - from the default location to single destination, anytime", () => {
