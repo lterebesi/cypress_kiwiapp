@@ -35,7 +35,7 @@ The following test cases have been automated for www.kiwi.com website:
 
 | # | **Test Step**                                       | **Expected**                                |
 |---|-----------------------------------------------------|---------------------------------------------|
-| 1 |Access the www.kiwi.com website                      | The webpage is accessed                     |
+| 1 | Access the www.kiwi.com website                     | The webpage is accessed                     |
 | 2 | Uncheck the "Booking.com" checkbox                  | The checkbox is unchecked                   |
 | 3 | Leave the default Departure field location selected | The defaults remain selected                |
 | 4 | Click the Destination autocomplete field            | The autocomplete field gets expanded        |
