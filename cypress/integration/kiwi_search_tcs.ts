@@ -37,8 +37,8 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
-      .type(Cypress.env("toDestination"), { delay: 500 })
-      .type("{enter}", { delay: 500 })
+      .type(Cypress.env("toDestination"), { delay: 700 })
+      .type("{enter}", { delay: 700 })
       .type("{esc}");
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
   });
@@ -47,8 +47,8 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
-      .type(Cypress.env("toDestination"), { delay: 500 })
-      .type("{enter}", { delay: 500 })
+      .type(Cypress.env("toDestination"), { delay: 700 })
+      .type("{enter}", { delay: 700 })
       .type("{esc}");
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
     cy.get(departureDate).click();
@@ -60,10 +60,10 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
-      .type(Cypress.env("toDestination"), { delay: 500 })
-      .type("{enter}", { delay: 500 })
-      .type(Cypress.env("toDestinationTwo"), { delay: 500 });
-    cy.get(secondDestination).type("{enter}", { delay: 500 }).type("{esc}");
+      .type(Cypress.env("toDestination"), { delay: 700 })
+      .type("{enter}", { delay: 700 })
+      .type(Cypress.env("toDestinationTwo"), { delay: 700 });
+    cy.get(secondDestination).type("{enter}", { delay: 700 }).type("{esc}");
 
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
     cy.get(secondDestination).should(
@@ -77,15 +77,15 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(departureLocation)
       .first()
       .click()
-      .type(Cypress.env("newDepartureLocation"), { delay: 500 })
-      .type("{enter}", { delay: 500 });
+      .type(Cypress.env("newDepartureLocation"), { delay: 700 })
+      .type("{enter}", { delay: 700 });
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
-      .type(Cypress.env("toDestination"), { delay: 500 });
+      .type(Cypress.env("toDestination"), { delay: 700 });
     cy.get(firstDestination)
       .first()
-      .type("{enter}", { delay: 500 })
+      .type("{enter}", { delay: 700 })
       .type("{esc}");
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
   });
@@ -95,15 +95,15 @@ describe("Kiwi App - Search flights scenarios", () => {
     cy.get(departureLocation)
       .first()
       .click()
-      .type(Cypress.env("newDepartureLocation"), { delay: 500 })
-      .type("{enter}", { delay: 500 });
+      .type(Cypress.env("newDepartureLocation"), { delay: 700 })
+      .type("{enter}", { delay: 700 });
     cy.get(firstDestination).click();
     cy.get(firstDestination)
       .first()
-      .type(Cypress.env("toDestination"), { delay: 500 });
+      .type(Cypress.env("toDestination"), { delay: 700 });
     cy.get(firstDestination)
       .first()
-      .type("{enter}", { delay: 500 })
+      .type("{enter}", { delay: 700 })
       .type("{esc}");
 
     cy.get(firstDestination).should("contain", Cypress.env("toDestination"));
