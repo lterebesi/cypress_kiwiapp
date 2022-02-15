@@ -27,7 +27,7 @@ describe("Kiwi App - Search flights scenarios", () => {
   });
 
   // Each scenario performs as ultimate steps a Search button click and validates a text
-  // which is unique on the landing sarch results page - added in the afterEach() hook
+  // which is unique on the landing search results page - added in the afterEach() hook
   afterEach(() => {
     cy.get(searchButton).click();
     cy.contains(cheapestprice).should("be.visible");
