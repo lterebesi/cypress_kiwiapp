@@ -29,11 +29,7 @@ npm install -g cypress
 ```bash 
 npm install -g typescript
 ```
-10. Make sure cypress is installed or install it with 
-```bash
-npm install cypress
-```
-11. Open the Cypress Runner with 
+10. Open the Cypress Runner with 
 ```bash
 cypress open
 ```
