@@ -1,5 +1,5 @@
 describe("Kiwi App - Search flights scenarios", () => {
-  const cookiesAccept        = '.bxaSJY';
+  const cookiesAccept        = '.eilxPX';
   const defaultDepartureCity = '[data-test="PlacePickerInput-origin"]'
   const bookingCheckbox      = 'input[type=checkbox]';
   const firstDestination     = '[data-test="PlacePickerInput-destination"]';
