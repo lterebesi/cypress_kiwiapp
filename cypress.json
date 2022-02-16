@@ -1,4 +1,5 @@
-{
+{   
+    "defaultCommandTimeout": 10000,
     "env":
         {
             "baseURL": "https://www.kiwi.com", 
